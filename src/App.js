@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import PostForm from "./postCard/index";
+import 'antd/dist/antd.css';
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import CreatePostCard from "./postCard/create";
+import EditPostCard from "./postCard/edit";
+import {ToastContainer} from "react-toastify";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <BrowserRouter>
+           <Routes>
+               <Route path="/" element={ <PostForm/>}/>
+               <Route path="/create" element={ <CreatePostCard/>}/>
+               <Route path="/edit" element={ <EditPostCard/>}/>
+           </Routes>
+            <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
+            <ToastContainer />
+        </BrowserRouter>
+    );
 }
 
 export default App;

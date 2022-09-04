@@ -5,9 +5,43 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #79c1d9f2;
+
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.app {
+ 
+  display: block; 
+  padding: 0;
+  margin: 0 ;
+}
+.content {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  margin: 0 auto;
+  max-width: 1140px;
+}
+.card {
+  display: flex;
+  width: 95%;
+  gap: 10px;
+  border-radius: 10px;
+  margin: 10px auto;
+  padding: 20px;
+  color: rgb(61, 61, 61);
+  text-align: center;
+}
+.card strong {
+  color:rgb(225, 189, 70);
+}
+
+.edit{
+  font-size: 1.4rem;
+  margin-left: 1rem;
+
 }
