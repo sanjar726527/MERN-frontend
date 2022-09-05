@@ -1,32 +1,19 @@
-import React from "react";
-import PostForm from "./postCard/index";
+import React, {useEffect} from 'react';
+import {Routes,Route} from "react-router-dom";
 import 'antd/dist/antd.css';
-import {BrowserRouter, Route, Routes} from "react-router-dom";
-import CreatePostCard from "./postCard/create";
-import EditPostCard from "./postCard/edit";
-import {ToastContainer} from "react-toastify";
-
-function App() {
+import '../src/assets/basic/basic.scss'
+import Layout from "./Router/layout/Layout";
+import PostForm from "./Router/postForm/PostForm";
+import Dashboard from "./Router/dashboard/Dashboard";
+import 'bootstrap/dist/css/bootstrap.min.css'
+function App(props) {
     return (
-        <BrowserRouter>
-           <Routes>
-               <Route path="/" element={ <PostForm/>}/>
-               <Route path="/create" element={ <CreatePostCard/>}/>
-               <Route path="/edit" element={ <EditPostCard/>}/>
-           </Routes>
-            <ToastContainer
-                position="top-right"
-                autoClose={5000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-            />
-            <ToastContainer />
-        </BrowserRouter>
+       <Routes>
+        <Route path='/' element={<Layout/>}>
+           <Route index element={<Dashboard/>}/>
+           <Route  path='post' element={<PostForm/>}/>
+        </Route>
+       </Routes>
     );
 }
 

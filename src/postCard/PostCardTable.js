@@ -77,7 +77,7 @@ const PostCardTable = () => {
             <Modal title="Delete text" visible={!!isModalVisible}
                    confirmLoading={confirmLoad}
                    onOk={remove}
-                   onCancel={handleCancel}/>
+                   onCan cel={handleCancel}/>
         </Card>
     );
 };

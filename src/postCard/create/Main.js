@@ -9,6 +9,7 @@ const Main = () => {
     const navigate = useNavigate()
     const location = useLocation()
     const [data, setData] = useState()
+    
     const onFinish = (values) => {
         axios.post("/api/workouts", values).then((res) => {
             toast.success("Successful")
@@ -35,6 +36,7 @@ const Main = () => {
             fetchData(id)
         }
     }, [])
+    
     return (
         <Form
             form={form}

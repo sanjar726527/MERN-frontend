@@ -1,0 +1,11 @@
+.main{
+  display: grid;
+  height: 100vh;
+  .form{
+    place-self: center;
+    width: 20%;
+    input{
+      width: 100%;
+    }
+  }
+}
